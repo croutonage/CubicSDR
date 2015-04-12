@@ -7,11 +7,11 @@ added 2.16M Samplerate, Useful due to being a multiple of both 28.8 and 48k, the
 
 Hardcoded a ppm offset into CubicSDRDefs.h for one of my sticks (ppm0)
 
-Removed AGC and hardcoded to '38' as gain to suit E4000 under most uses
+Removed AGC and hardcoded to '34' as gain to suit E4000 under most uses
 
 Changed fft from 2048 to 16k as my pc will handle it and it looks prettier
 
-Top notch effort by the author on the recent changes, http://www.reddit.com/r/RTLSDR/comments/2yi1r9/cubicsdr_v011beta_for_win64_and_osx_plus/
+Top notch effort by the author on the recent changes
 
 
 Cross-Platform Software-Defined Radio Application
