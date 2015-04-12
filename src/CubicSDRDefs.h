@@ -1,7 +1,7 @@
 #pragma once
 
 #define CUBICSDR_TITLE "CubicSDR v" CUBICSDR_VERSION " by Charles J. Cliffe (@ccliffe)  ::  www.cubicsdr.com"
-
+#define ppm0 -110
 #ifndef __BYTE_ORDER
     #ifdef _WIN32
         #define ATTRIBUTE
@@ -31,7 +31,7 @@ const char filePathSeparator =
 #endif
 #ifdef __linux__
 #define BUF_SIZE (16384*6)
-#define DEFAULT_SAMPLE_RATE 2000000
+#define DEFAULT_SAMPLE_RATE 2160000
 #endif
 
 #ifndef BUF_SIZE
@@ -39,11 +39,11 @@ const char filePathSeparator =
 #define DEFAULT_SAMPLE_RATE 2500000
 #endif
 
-#define DEFAULT_FFT_SIZE 2048
+#define DEFAULT_FFT_SIZE 16384
 
-#define DEFAULT_FREQ 100000000
+#define DEFAULT_FREQ 485375000
 #define DEFAULT_DEMOD_TYPE 1
-#define DEFAULT_DEMOD_BW 200000
+#define DEFAULT_DEMOD_BW 25000
 
 #include <mutex>
 #include <atomic>

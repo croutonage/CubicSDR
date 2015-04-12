@@ -187,6 +187,7 @@ AppFrame::AppFrame() :
     sampleRateMenuItems[wxID_BANDWIDTH_1000M] = menu->AppendRadioItem(wxID_BANDWIDTH_1000M, "1.0M");
     sampleRateMenuItems[wxID_BANDWIDTH_1500M] = menu->AppendRadioItem(wxID_BANDWIDTH_1500M, "1.5M");
     sampleRateMenuItems[wxID_BANDWIDTH_2000M] = menu->AppendRadioItem(wxID_BANDWIDTH_2000M, "2.0M");
+    sampleRateMenuItems[wxID_BANDWIDTH_2160M] = menu->AppendRadioItem(wxID_BANDWIDTH_2160M, "2.16M");
     sampleRateMenuItems[wxID_BANDWIDTH_2500M] = menu->AppendRadioItem(wxID_BANDWIDTH_2500M, "2.5M");
     sampleRateMenuItems[wxID_BANDWIDTH_2880M] = menu->AppendRadioItem(wxID_BANDWIDTH_2880M, "2.88M");
     sampleRateMenuItems[wxID_BANDWIDTH_3200M] = menu->AppendRadioItem(wxID_BANDWIDTH_3200M, "3.2M");
@@ -194,7 +195,7 @@ AppFrame::AppFrame() :
 #ifdef __APPLE
     sampleRateMenuItems[wxID_BANDWIDTH_2000M]->Check(true);
 #else
-    sampleRateMenuItems[wxID_BANDWIDTH_2500M]->Check(true);
+    sampleRateMenuItems[wxID_BANDWIDTH_2160M]->Check(true);
 #endif
 
     menuBar->Append(menu, wxT("&Input Bandwidth"));

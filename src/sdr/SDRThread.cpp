@@ -140,7 +140,10 @@ void SDRThread::threadMain() {
     rtlsdr_open(&dev, deviceId);
     rtlsdr_set_sample_rate(dev, sampleRate);
     rtlsdr_set_center_freq(dev, frequency - offset);
-    rtlsdr_set_agc_mode(dev, 1);
+    rtlsdr_set_freq_correction(dev, ppm0);
+    //rtlsdr_set_agc_mode(dev, 1);
+    rtlsdr_set_tuner_gain_mode(dev, 1);
+    rtlsdr_set_tuner_gain(dev, 340);
     rtlsdr_set_offset_tuning(dev, 0);
     rtlsdr_reset_buffer(dev);
 
@@ -208,6 +211,7 @@ void SDRThread::threadMain() {
                 rtlsdr_set_sample_rate(dev, sampleRate);
                 rtlsdr_set_center_freq(dev, frequency - offset);
                 rtlsdr_set_agc_mode(dev, 1);
+                rtlsdr_set_freq_correction(dev, ppm0);
                 rtlsdr_set_offset_tuning(dev, 0);
                 rtlsdr_reset_buffer(dev);
             }
@@ -215,10 +219,12 @@ void SDRThread::threadMain() {
                 freq_changed = true;
                 new_freq = frequency;
                 offset = new_offset;
+                rtlsdr_set_freq_correction(dev, ppm0);
             }
             if (rate_changed) {
                 sampleRate = new_rate;
                 rtlsdr_set_sample_rate(dev, new_rate);
+                rtlsdr_set_freq_correction(dev, ppm0);
             }
             if (freq_changed) {
                 frequency = new_freq;
